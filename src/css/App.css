@@ -1,1 +1,6 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.bodyApp{
+    margin-left: 20px;
+    margin-top: 20px;
+}

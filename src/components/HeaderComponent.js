@@ -1,23 +1,10 @@
 import React, { Component } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../images/formations.jpg';
 
 class HeaderComponent extends Component {  
-    
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            navActive : 'home'
-        };
-
-        this.setActiveNav = this.setActiveNav.bind(this);
-    };
-
-    setActiveNav(activeN) {
-        this.setState({navActive : activeN});
-    };
-    
+        
     render() {
         return (
             <Navbar bg="light" expand="lg">
@@ -32,11 +19,10 @@ class HeaderComponent extends Component {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav activeKey={this.state.navActive}
-                         onSelect={(selectedKey) => this.setActiveNav(selectedKey)}>
-                        <Nav.Link eventKey="home" href="/">Home</Nav.Link>
-                        <Nav.Link eventKey="formations" href="/formations">Formations</Nav.Link>
-                        <Nav.Link eventKey="about" href="/about">About</Nav.Link>
+                    <Nav>
+                        <Link className="nav-link" exact to="/">Home</Link>
+                        <Link className="nav-link" to="/formations">Formations</Link>
+                        <Link className="nav-link" to="/about">About</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
