@@ -15,3 +15,10 @@ export const removeForma = id => ({
   type: 'REMOVE_FORMA',
   id
 })
+
+export const sauvegarderForma = (id, text, desc) => ({
+  type: 'SAUVEGARDER_FORMA',
+  id,
+  text,
+  desc
+})

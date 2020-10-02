@@ -10,3 +10,10 @@
     width: 25px;
     height: 25px;
 }
+
+.buttonTableStyle{
+    border: 0px;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+}

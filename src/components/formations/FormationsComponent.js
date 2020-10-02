@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import FormationsList from '../../containers/formations/FormationsList';
+import FormationsContainer from '../../containers/formations/FormationsContainer';
 
 class FormationsComponent extends Component {  
   render() {
     return (
       <div>
-        <FormationsList />
+        <FormationsContainer />
       </div>
     );
   }

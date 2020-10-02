@@ -1,8 +1,8 @@
 import React from 'react'
-import Forma from './FormaComponent'
+import Forma from './FormationLigne';
 
-const FormasList = ({ formas, displayForma, removeForma }) => (
-  <table class="table table-bordered">
+const FormasList = ({ formas, removeForma }) => (
+  <table className="table table-bordered">
     <thead>
       <tr>
         <th>Nom de la formation</th>
@@ -12,7 +12,7 @@ const FormasList = ({ formas, displayForma, removeForma }) => (
     </thead>
     <tbody>
       {formas.map(forma => (
-        <Forma key={forma.id} {...forma} deleteAct={() => removeForma(forma.id)} AfficheAct={() => displayForma(forma.id)} />
+        <Forma key={forma.id} {...forma} deleteAct={() => removeForma(forma.id)} />
       ))}
     </tbody>
   </table>

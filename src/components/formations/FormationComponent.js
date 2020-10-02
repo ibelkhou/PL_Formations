@@ -1,30 +1,21 @@
 import React, { Component } from 'react';
+import FormationsContainer from '../../containers/formations/FormationsContainer';
 
-class FormationComponent extends Component {  
+let formaId = 1;
+
+class FormationComponent extends Component { 
+  
+  constructor(props, context) {
+    super(props, context);
+
+    formaId = this.props.match.params.formaId;
+  }
+
   render() {
     return (
-      <form>
-        <h3>Gérer Formation</h3>
-        <label htmlFor="name">Nom de la formation</label>
-        <input type="text"
-            name="name"
-            className="form-control"
-            placeholder="Nom de la formation"
-            ref="name"
-            value=""/>
-          <br/>
-
-        <label htmlFor="desc">Description de la formation</label>
-        <input type="text"
-            name="desc"
-            className="form-control"
-            placeholder="Description de la formation"
-            ref="desc"
-            value=""/>
-          <br/>
-
-          <input type="submit" value="Sauvegarder" className="bnt bnt-default bnt-xs" />
-      </form>
+      <div>
+        <FormationsContainer formaId={formaId} />
+      </div>
     );
   }
 

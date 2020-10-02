@@ -19,7 +19,7 @@ class App extends Component {
               <Route exact path='/' component={HomeComponent} />
               <Route path='/formations' component={FormationsComponent} />
               <Route path='/about' component={AboutComponent} />
-              <Route path='/formations/:formaId' component={FormationComponent} />
+              <Route path='/displayForma/:formaId?' component={FormationComponent} />
             </Switch>
           </div>
         </Container>

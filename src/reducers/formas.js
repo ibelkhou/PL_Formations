@@ -1,7 +1,9 @@
 const formas = (state = { formas: [
-                  {id: "1", name:"Test 1", desc:"desc 1"},
-                  {id: "2", name:"Test 2", desc:"desc 2"}
-                ]}, action) => {
+                                    {id: "1", name:"Test 1", desc:"desc 1"},
+                                    {id: "2", name:"Test 2", desc:"desc 2"}
+                                  ]
+                        },
+                 action) => {
         switch (action.type) {
           case 'ADD_FORMA':
             return {formas: [
