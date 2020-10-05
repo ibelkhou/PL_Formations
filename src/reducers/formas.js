@@ -5,15 +5,26 @@ const formas = (state = { formas: [
                         },
                  action) => {
         switch (action.type) {
-          case 'ADD_FORMA':
-            return {formas: [
-              ...state.formas,
-              {
-                id: action.id,
-                name: action.text,
-                desc: action.desc,
-              }
-            ]}
+          case 'SAUVEGARDER_FORMA':
+            const idEexists = state.formas.some(f => (f.id === action.id));
+            if (idEexists) {
+              return {formas: state.formas.filter(forma => {
+                  if (forma.id === action.id) {
+                    forma.name = action.name;
+                    forma.desc = action.desc;
+                  }
+                  return forma;
+              })}
+            } else {
+              return {formas: [
+                ...state.formas,
+                {
+                  id: action.id,
+                  name: action.name,
+                  desc: action.desc,
+                }
+              ]}
+            }
           case 'REMOVE_FORMA':
             return {formas: state.formas.filter(forma => {
               return forma.id !== action.id

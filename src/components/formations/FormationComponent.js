@@ -8,13 +8,14 @@ class FormationComponent extends Component {
   constructor(props, context) {
     super(props, context);
 
+
     formaId = this.props.match.params.formaId;
   }
 
   render() {
     return (
       <div>
-        <FormationsContainer formaId={formaId} />
+        <FormationsContainer formaId={formaId} displayPage="formulaire" />
       </div>
     );
   }

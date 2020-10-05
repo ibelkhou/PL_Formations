@@ -17,3 +17,8 @@
     height: 25px;
     background: transparent;
 }
+
+.floatRight {
+    float: right;
+    margin-right: 10px;
+}

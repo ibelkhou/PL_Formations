@@ -1,24 +1,13 @@
-let nextFormationId = 0
-export const addForma = (text, desc) => ({
-  type: 'ADD_FORMA',
-  id: nextFormationId++,
-  text,
-  desc
-})
-
-export const displayForma = id => ({
-  type: 'DISPLAY_FORMA',
-  id
-})
+let nextFormationId = 3
 
 export const removeForma = id => ({
   type: 'REMOVE_FORMA',
   id
 })
 
-export const sauvegarderForma = (id, text, desc) => ({
+export const sauvegarderForma = (id, name, desc) => ({
   type: 'SAUVEGARDER_FORMA',
-  id,
-  text,
+  id: id ? id : nextFormationId++,
+  name,
   desc
 })

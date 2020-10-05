@@ -5,7 +5,7 @@ class FormationsComponent extends Component {
   render() {
     return (
       <div>
-        <FormationsContainer />
+        <FormationsContainer displayPage="list" />
       </div>
     );
   }

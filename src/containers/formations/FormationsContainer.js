@@ -7,17 +7,23 @@ const getFormasList = (formas) => {
 }
 
 const getFormationToDisplay = (formas, idForma) => { 
-  var formaSelected =  formas.filter(forma => {
-    return forma.id === idForma
-  });
+  var formaSelected = {id: "", name:"", desc:""};
 
-  return formaSelected[0] ? formaSelected[0] : null
+  if (idForma) {
+    var formaListSelected =  formas.filter(forma => {
+      return forma.id === idForma
+    });
+
+    formaSelected = formaListSelected[0] ? formaListSelected[0] : null
+  }
+
+  return formaSelected
 }
 
 const mapStateToProps = (state, ownProps) => ({
   formas: getFormasList(state.formas.formas),
   forma: getFormationToDisplay(state.formas.formas, ownProps.formaId),
-  formaId: ownProps.formaId ? ownProps.formaId : ""
+  displayPage: ownProps.displayPage ? ownProps.displayPage : "list"
 })
 
 const mapDispatchToProps = dispatch => ({
